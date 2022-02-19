@@ -8,24 +8,31 @@ namespace MoodAnalyser
 {
     public class Program
     {
-        public  string AnalyseMood(string s)
+        public string AnalyseMood(string s)
         {
-            string []wordbag ={"sad","unhappy","gloomy","sombre","melancholy","homesick" };
-            string [] words=s.Split(' ');
-            bool sad = false;
+            try {
+                string[] wordbag = { "sad", "unhappy", "gloomy", "sombre", "melancholy", "homesick" };
+                string[] words = s.Split(' ');
+                bool sad = false;
 
-            for(int i = 0; i < words.Length; i++)
-            {
-                for(int j=0; j < wordbag.Length; j++)
+                for (int i = 0; i < words.Length; i++)
                 {
-                    if (words[i].ToLower().CompareTo(wordbag[j]) == 0) sad = true;
+                    for (int j = 0; j < wordbag.Length; j++)
+                    {
+                        if (words[i].ToLower().CompareTo(wordbag[j]) == 0) sad = true;
+                    }
                 }
+                if (sad)
+                    return "SAD";
+                else
+                    return "HAPPY";
             }
-            if (sad)
-                return "SAD";
-            else
+            catch
+            {
                 return "HAPPY";
-        }
+            }
+            }
+
         static void Main(string[] args)
         {
         }

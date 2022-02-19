@@ -6,22 +6,15 @@ namespace MsTestingMoodAnalyser
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-       
-        public void Moodanalyser_testTC1a()
-        {
-          Program mood=new Program();
-            string moodname = mood.AnalyseMood(" I am in Sad Mood");
-            Assert.AreEqual("SAD", moodname);
-           
-        }
+        
 
         [TestMethod]
 
-        public void Moodanalyser_testTC1b()
+        public void Moodanalyser_testTC2a()
         {
             Program mood = new Program();
-            string moodname = mood.AnalyseMood(" I am in Any Mood");
+            string s=null;
+            string moodname = mood.AnalyseMood(s);
             Assert.AreEqual("HAPPY", moodname);
 
         }
