@@ -10,12 +10,22 @@ namespace MsTestingMoodAnalyser
 
         [TestMethod]
 
-        public void Moodanalyser_testTC2a()
+        public void Moodanalyser_testTC3a()
         {
-            Program mood = new Program();
-            string s=null;
-            string moodname = mood.AnalyseMood(s);
-            Assert.AreEqual("HAPPY", moodname);
+            string s =null;
+            Mood_Analyser mood = new Mood_Analyser(s);
+            string moodname = mood.AnalyseMood();
+            Assert.AreEqual("The mood is Null", moodname);
+
+        }
+        [TestMethod]
+
+        public void Moodanalyser_testTC3b()
+        {
+            string s ="";
+            Mood_Analyser mood = new Mood_Analyser(s);
+            string moodname = mood.AnalyseMood();
+            Assert.AreEqual("The mood is empty", moodname);
 
         }
     }
